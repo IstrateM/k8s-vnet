@@ -11,10 +11,10 @@ data:
       cnns:
         name: {{ .Values.nsm.serviceName | quote }}
         address: "{{ .Values.cnns.addr }}:{{ .Values.cnns.port }}"
-    connectivitydomain: {{ .Values.cnns.cd | quote}}
+    connectivityDomain: {{ .Values.cnns.cd | quote}}
       vl3:
        ipam:
-          prefixpool: {{ .Values.ipam.prefixPool | quote }}
-          prefixlength: {{ .Values.ipam.prefixLength | quote }}
+          defaultPrefixPool: {{ .Values.ipam.prefixPool | quote }}
+          prefixLength: {{ .Values.ipam.prefixLength | quote }}
           routes: []
        ifname: "endpoint0"
