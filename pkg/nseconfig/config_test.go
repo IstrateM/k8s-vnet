@@ -25,9 +25,9 @@ func TestNewConfig(t *testing.T) {
 				ConnectivityDomain: "test-connectivity-domain",
 			}, VL3: VL3{
 				IPAM: IPAM{
-					PrefixPool:   "192.168.33.0/24",
-					PrefixLength: 24,
-					Routes:       []string{"192.168.34.0/24"},
+					DefaultPrefixPool: "192.168.33.0/24",
+					PrefixLength:      24,
+					Routes:            []string{"192.168.34.0/24"},
 				},
 				Ifname:      "nsm3",
 				NameServers: []string{"nms.google.com", "nms.google.com2"},
@@ -67,15 +67,15 @@ endpoints:
   - cnns:
       name: cnns1
       address: golang.com:9000
-      accesstoken: 123123
-      connectivitydomain: test-connectivity-domain
+      accessToken: 123123
+      connectivityDomain: test-connectivity-domain
     vl3:
       ipam:
-        prefixpool: 192.168.33.0/24
-        prefixlength: 24
+        defaultPrefixPool: 192.168.33.0/24
+        prefixLength: 24
         routes: [192.168.34.0/24]
-      ifname: nsm3
-      nameservers: [nms.google.com, nms.google.com2]
+      ifName: nsm3
+      nameServers: [nms.google.com, nms.google.com2]
 `
 
 const testFile2 = `
@@ -85,9 +85,9 @@ endpoints:
       address: ""
     vl3:
       ipam:
-        prefixpool: invalid-pull
-        prefixlength: 100
+        defaultPrefixPool: invalid-pull
+        prefixLength: 100
         routes: [invalid-route1, invalid-route2]
-      ifname: 
-      nameservers: []
+      ifName: 
+      nameServers: []
 `

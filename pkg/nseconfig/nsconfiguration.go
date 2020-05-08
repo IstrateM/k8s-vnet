@@ -14,7 +14,7 @@ func (e *Endpoint) ToNSConfiguration() *common.NSConfiguration {
 		AdvertiseNseName:   e.Name,
 		AdvertiseNseLabels: e.Labels.String(),
 		MechanismType:      memif.MECHANISM,
-		IPAddress:          e.VL3.IPAM.PrefixPool,
+		IPAddress:          e.VL3.IPAM.DefaultPrefixPool,
 		Routes:             e.VL3.IPAM.Routes,
 		NscInterfaceName:   e.VL3.Ifname,
 	}

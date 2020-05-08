@@ -37,7 +37,7 @@ func (c CNNS) validate() error {
 func (v VL3) validate() error {
 	var errs InvalidConfigErrors
 
-	if _, _, err := net.ParseCIDR(v.IPAM.PrefixPool); err != nil {
+	if _, _, err := net.ParseCIDR(v.IPAM.DefaultPrefixPool); err != nil {
 		errs = append(errs, fmt.Errorf("prefix pool is not a valid subnet: %s", err))
 	}
 	for i, r := range v.IPAM.Routes {
