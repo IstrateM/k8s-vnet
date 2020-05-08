@@ -38,7 +38,7 @@ type VL3 struct {
 
 type IPAM struct {
 	PrefixPool   string
-	PrefixLength string
+	PrefixLength int
 	Routes       []string
 }
 

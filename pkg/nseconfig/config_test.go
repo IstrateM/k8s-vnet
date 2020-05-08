@@ -26,7 +26,7 @@ func TestNewConfig(t *testing.T) {
 			}, VL3: VL3{
 				IPAM: IPAM{
 					PrefixPool:   "192.168.33.0/24",
-					PrefixLength: "24",
+					PrefixLength: 24,
 					Routes:       []string{"192.168.34.0/24"},
 				},
 				Ifname:      "nsm3",
