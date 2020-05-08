@@ -14,7 +14,7 @@ data:
     connectivityDomain: {{ .Values.cnns.cd | quote}}
       vl3:
        ipam:
-          defaultPrefixPool: {{ .Values.ipam.prefixPool | quote }}
+          defaultPrefixPool: {{ .Values.ipam.defaultPrefixPool | quote }}
           prefixLength: {{ .Values.ipam.prefixLength | quote }}
           routes: []
        ifName: "endpoint0"
