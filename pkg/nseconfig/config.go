@@ -37,8 +37,9 @@ type VL3 struct {
 }
 
 type IPAM struct {
-	PrefixPool string
-	Routes     []string
+	PrefixPool   string
+	PrefixLength string
+	Routes       []string
 }
 
 type decoder interface {

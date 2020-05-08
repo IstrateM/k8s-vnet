@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"net"
+	"strconv"
 )
 
 type InvalidConfigErrors []error
@@ -44,6 +45,14 @@ func (v VL3) validate() error {
 		if _, _, err := net.ParseCIDR(r); err != nil {
 			errs = append(errs, fmt.Errorf("route nr %d with value %s is not a valid subnet: %s", i, r, err))
 		}
+	}
+
+	if pl, err := strconv.Atoi(v.IPAM.PrefixLength); err == nil {
+		if pl < 1 || pl > 32 {
+			errs = append(errs, fmt.Errorf("prefix length is not valid, it must be between 1 and 32"))
+		}
+	} else {
+		errs = append(errs, fmt.Errorf("prefix length is not valid, it must be between 1 and 32"))
 	}
 
 	if len(errs) > 0 {

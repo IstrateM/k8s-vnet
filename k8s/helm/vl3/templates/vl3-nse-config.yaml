@@ -15,5 +15,6 @@ data:
       vl3:
        ipam:
           prefixpool: {{ .Values.ipam.prefixPool | quote }}
+          prefixlength: {{ .Values.ipam.prefixLength | quote }}
           routes: []
        ifname: "endpoint0"

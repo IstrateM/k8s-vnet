@@ -18,7 +18,8 @@ nsm:
   serviceName: vl3-service
 
 ipam:
-  prefixPool: "172.31.0.0/16"
+  prefixPool: "172.31.0.0/24"
+  prefixLength: "24"
   # uniqueOctet: 
 
 replicaCount: 1
