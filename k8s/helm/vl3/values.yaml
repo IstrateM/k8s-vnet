@@ -20,6 +20,7 @@ nsm:
 ipam:
   defaultPrefixPool: "172.31.0.0/24"
   prefixLength: "24"
+  serverAddress: "ipam-vl3-service.cnns-cisco.com"
   # uniqueOctet:
 
 replicaCount: 1

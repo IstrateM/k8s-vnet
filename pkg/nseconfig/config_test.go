@@ -28,6 +28,7 @@ func TestNewConfig(t *testing.T) {
 					DefaultPrefixPool: "192.168.33.0/24",
 					PrefixLength:      24,
 					Routes:            []string{"192.168.34.0/24"},
+					ServerAddress:     "ipam-example.cnns-cisco.com",
 				},
 				Ifname:      "nsm3",
 				NameServers: []string{"nms.google.com", "nms.google.com2"},
@@ -74,6 +75,7 @@ endpoints:
         defaultPrefixPool: 192.168.33.0/24
         prefixLength: 24
         routes: [192.168.34.0/24]
+        serverAddress: ipam-example.cnns-cisco.com
       ifName: nsm3
       nameServers: [nms.google.com, nms.google.com2]
 `

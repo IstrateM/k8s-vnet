@@ -40,6 +40,7 @@ type IPAM struct {
 	DefaultPrefixPool string   `yaml:"defaultPrefixPool"`
 	PrefixLength      int      `yaml:"prefixLength"`
 	Routes            []string `yaml:"routes"`
+	ServerAddress     string   `yaml:"serverAddress"`
 }
 
 type decoder interface {
